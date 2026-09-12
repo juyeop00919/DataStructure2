@@ -56,3 +56,4 @@ int printArrayStack(ArrayStack* s) {
 		printf("[%d] %c\n", i, s->data[i]);
 	}
 }
+//dd
