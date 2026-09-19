@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "tree.h"
+#include <windows.h> 
+
 
 int main() {
     char input[MAX_TREE_SIZE];
@@ -25,16 +27,25 @@ int main() {
     
         //포인터
         printf("\n\n=============== [ Linked Tree ] ===============\n");
-        int temp[MAX_NODES] = { 0 };
         TreeNode* linkedTreeRoot = buildLinkedTree(input);
-
+        //int temp[MAX_NODES] = { 0 };
         printf("\n[ Linked Tree ]\n");
         printLinkedTree(linkedTreeRoot, 0, temp);
         analyzeLinkedTree(linkedTreeRoot);
 
-        printf("\n=========================================================\n");
-
         
-    
-    return 0;
+        //Sleep(30000);
+
+
+        printf("\n\n=============== [ Find Node ] ===============\n");
+        char target;
+        printf("탐색할 노드의 알파벳을 입력하세요 (예: C): ");
+        scanf(" %c", &target); 
+
+        printRelationsArray(&arrTree, target); //배열에서 찾기
+        printRelationsLinked(linkedTreeRoot, target); //포인터에서 찾기
+
+
+
+        return 0;
 }

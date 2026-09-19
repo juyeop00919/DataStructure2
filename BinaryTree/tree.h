@@ -27,9 +27,11 @@ extern void createArrayTree(ArrayTree* tree);
 extern void buildArrayTree(ArrayTree* tree,char* str);
 extern void printArrayTree(ArrayTree* tree, int index, int depth, int* sib);
 extern void analyzeArrayTree(ArrayTree* tree);
+extern void printRelationsArray(ArrayTree* tree, char target);
 
 //포인터
 extern TreeNode* createNode(char data);
 extern TreeNode* buildLinkedTree(char* str);
 extern void printLinkedTree(TreeNode* node, int depth, int* sib);
 extern void analyzeLinkedTree(TreeNode* root);
+extern void printRelationsLinked(TreeNode* root, char target);

@@ -137,6 +137,45 @@ void analyzeArrayTree(ArrayTree* tree) {
     printf("- 편향 이진트리 여부 (Skewed): %s\n", isSkewed ? "Yes" : "No");
 }
 
+//배열찾기
+void printRelationsArray(ArrayTree* tree, char target) {
+    int target_idx = -1;
+    for (int i = 1; i <= tree->max_index; i++) {
+        if (tree->data[i] == target) {
+            target_idx = i;
+            break;
+        }
+    }
+
+    if (target_idx == -1) {
+        printf("배열 트리: 노드 '%c'를 찾을 수 없습니다.\n", target);
+        return;
+    }
+
+    printf("\n[ 배열 트리 - 노드 '%c' 관계 ]\n", target);
+
+    // 부모 노드 (i / 2)
+    if (target_idx == 1) printf("- 부모 노드: 없음 (루트 노드)\n");
+    else printf("- 부모 노드: %c\n", tree->data[target_idx / 2]);
+
+    // 자식 노드 (왼쪽 i*2, 오른쪽 i*2+1)
+    int left = target_idx * 2;
+    int right = target_idx * 2 + 1;
+    if (left <= MAX_TREE_SIZE && tree->data[left] != '\0') printf("- 왼쪽 자식: %c\n", tree->data[left]);
+    else printf("- 왼쪽 자식: 없음\n");
+    if (right <= MAX_TREE_SIZE && tree->data[right] != '\0') printf("- 오른쪽 자식: %c\n", tree->data[right]);
+    else printf("- 오른쪽 자식: 없음\n");
+
+    // 형제 노드 (짝수면 +1, 홀수면 -1)
+    if (target_idx == 1) {
+        printf("- 형제 노드: 없음\n");
+    }
+    else {
+        int sib = (target_idx % 2 == 0) ? (target_idx + 1) : (target_idx - 1);
+        if (sib <= MAX_TREE_SIZE && tree->data[sib] != '\0') printf("- 형제 노드: %c\n", tree->data[sib]);
+        else printf("- 형제 노드: 없음\n");
+    }
+}
 //포인터
 TreeNode* createNode(char data) {
     TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode)); 
@@ -246,4 +285,51 @@ void analyzeLinkedTree(TreeNode* root) {
     printf("- 완전 이진트리 여부 (Complete) : %s\n", isComplete ? "Yes" : "No");
     printf("- 포화 이진트리 여부 (Perfect): %s\n", isPerfect ? "Yes" : "No");
     printf("- 편향 이진트리 여부 (Skewed): %s\n", isSkewed ? "Yes" : "No");
+}
+
+TreeNode* findNode(TreeNode* current, char target) {
+    if (current == NULL) return NULL;
+    if (current->data == target) return current;
+    TreeNode* leftSearch = findNode(current->left, target);
+    if (leftSearch != NULL) return leftSearch;
+    return findNode(current->right, target);
+}
+
+TreeNode* findParentLinked(TreeNode* current, char target) {
+    if (current == NULL) return NULL;
+    if ((current->left != NULL && current->left->data == target) ||
+        (current->right != NULL && current->right->data == target)) {
+        return current;
+    }
+    TreeNode* leftSearch = findParentLinked(current->left, target);
+    if (leftSearch != NULL) return leftSearch;
+    return findParentLinked(current->right, target);
+}
+
+void printRelationsLinked(TreeNode* root, char target) {
+    TreeNode* targetNode = findNode(root, target);
+    if (targetNode == NULL) {
+        printf("포인터 트리: 노드 '%c'를 찾을 수 없습니다.\n", target);
+        return;
+    }
+
+    printf("\n[ 포인터 트리 - 노드 '%c' 관계 ]\n", target);
+
+
+    if (targetNode->left != NULL) printf("- 왼쪽 자식: %c\n", targetNode->left->data);
+    else printf("- 왼쪽 자식: 없음\n");
+    if (targetNode->right != NULL) printf("- 오른쪽 자식: %c\n", targetNode->right->data);
+    else printf("- 오른쪽 자식: 없음\n");
+
+    TreeNode* parentNode = findParentLinked(root, target);
+    if (parentNode == NULL) {
+        printf("- 부모 노드: 없음 (루트 노드)\n");
+        printf("- 형제 노드: 없음\n");
+    }
+    else {
+        printf("- 부모 노드: %c\n", parentNode->data);
+        TreeNode* sibling = (parentNode->left == targetNode) ? parentNode->right : parentNode->left;
+        if (sibling != NULL) printf("- 형제 노드: %c\n", sibling->data);
+        else printf("- 형제 노드: 없음\n");
+    }
 }
