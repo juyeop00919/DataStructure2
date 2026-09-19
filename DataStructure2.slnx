@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="BinaryTree/BinaryTree.vcxproj" Id="4ee03fcb-e63f-4dfa-9524-417fd06cef92" />
   <Project Path="test/test.vcxproj" Id="2cd6c156-06be-496e-8626-3bac57345a08" />
   <Project Path="tree/tree.vcxproj" Id="c60215da-1c80-4984-9ef0-002bb85906df" />
 </Solution>
