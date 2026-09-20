@@ -363,3 +363,32 @@ void printRelationsLinked(TreeNode* root, char target) {
         else printf("- 형제 노드: 없음\n");
     }
 }
+
+//메모리 비교용
+void compareMemoryUsage(ArrayTree* arrTree, TreeNode* linkedRoot) {
+    int total_nodes = 0;
+    for (int i = 1; i <= arrTree->max_index; i++) {
+        if (arrTree->data[i] != '\0') {
+            total_nodes++;
+        }
+    }
+
+    // 배열 메모리 계산
+    int array_memory = arrTree->max_index * sizeof(char);
+    int wasted_space = arrTree->max_index - total_nodes;
+    float waste_ratio = (arrTree->max_index > 0) ? ((float)wasted_space / arrTree->max_index * 100.0f) : 0.0f;
+
+    // 포인터 메모리 계산
+    int pointer_memory = total_nodes * sizeof(TreeNode);
+
+    printf("\n\n============= 메모리 =============\n");
+
+    printf("\n[ 1. 배열 트리 메모리 분석 ]\n");
+    printf(">> 총 메모리 사용량: %d Byte\n", array_memory);
+    printf(">> 실제 데이터 수: %d개 / 배열 차지 인덱스: %d칸\n", total_nodes, arrTree->max_index);
+
+    printf("\n[ 2. 포인터 트리 메모리 분석 ]\n");
+    printf(">> 총 메모리 사용량: %d Byte\n", pointer_memory);
+    printf(">> 할당된 노드 수: %d개 (노드 1개당 크기: %zu Byte)\n", total_nodes, sizeof(TreeNode));
+
+}

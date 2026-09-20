@@ -35,7 +35,8 @@ int main() {
 
         
         //Sleep(30000);
-
+        //메모리
+        //compareMemoryUsage(&arrTree, linkedTreeRoot);
 
         printf("\n\n=============== [ Find Node ] ===============\n");
         char target;
