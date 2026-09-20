@@ -87,14 +87,34 @@ void buildArrayTree(ArrayTree* tree, char* str) {
 void printArrayTree(ArrayTree* tree, int index, int depth, int* sib) {
     if (index > MAX_TREE_SIZE || tree->data[index] == '\0') return;
 
-    printArrayTree(tree, index * 2 + 1, depth + 1, sib); // 오른쪽
-
-    for (int i = 0; i < depth; i++) {
-        printf("    ");
+    // 현재 노드 출력
+    if (depth == 0) {
+        printf("%c\n", tree->data[index]); 
     }
-    printf("+---%c\n", tree->data[index]);
+    else {
+        // 깊이에 따라 수직선(|) 또는 공백 출력
+        for (int i = 0; i < depth - 1; i++) {
+            if (sib[i]) printf("|   ");
+            else printf("    ");
+        }
+        printf("+---%c\n", tree->data[index]);
+    }
 
-    printArrayTree(tree, index * 2, depth + 1, sib);     // 왼쪽
+    int left_idx = index * 2;
+    int right_idx = index * 2 + 1;
+    int has_left = (left_idx <= MAX_TREE_SIZE && tree->data[left_idx] != '\0');
+    int has_right = (right_idx <= MAX_TREE_SIZE && tree->data[right_idx] != '\0');
+
+    // 왼쪽 자식이 있으면 먼저 탐색
+    if (has_left) {
+        sib[depth] = has_right ? 1 : 0;
+        printArrayTree(tree, left_idx, depth + 1, sib);
+    }
+    // 오른쪽 자식이 있으면 탐색
+    if (has_right) {
+        sib[depth] = 0;
+        printArrayTree(tree, right_idx, depth + 1, sib);
+    }
 }
 //분석
 void analyzeArrayTree(ArrayTree* tree) {
@@ -229,14 +249,24 @@ TreeNode* buildLinkedTree(char* str) {
 void printLinkedTree(TreeNode* node, int depth, int* sib) {
     if (node == NULL) return;
 
-    printLinkedTree(node->right, depth + 1, sib);
-
-    for (int i = 0; i < depth; i++) {
-        printf("    ");
+    if (depth == 0) {
+        printf("%c\n", node->data);
     }
-    printf("+---%c\n", node->data);
-
-    printLinkedTree(node->left, depth + 1, sib);
+    else {
+        for (int i = 0; i < depth - 1; i++) {
+            if (sib[i]) printf("|   ");
+            else printf("    ");
+        }
+        printf("+---%c\n", node->data);
+    }
+    if (node->left != NULL) {
+        sib[depth] = (node->right != NULL) ? 1 : 0;
+        printLinkedTree(node->left, depth + 1, sib);
+    }
+    if (node->right != NULL) {
+        sib[depth] = 0;
+        printLinkedTree(node->right, depth + 1, sib);
+    }
 }
 
 void analyzeLinkedTreeRecursive(TreeNode* node, int current_depth, int* total, int* leaf, int* non_leaf, int* max_depth, int* max_degree) {
