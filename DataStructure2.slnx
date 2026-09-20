@@ -4,6 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="BinaryTree/BinaryTree.vcxproj" Id="c145393d-a7b6-4d2b-80ec-fb22e13a3b0c" />
+  <Project Path="MenuBinaryTree/MenuBinaryTree.vcxproj" Id="0e2bb074-9696-40a9-b750-4b99a8f03211" />
   <Project Path="test/test.vcxproj" Id="2cd6c156-06be-496e-8626-3bac57345a08" />
   <Project Path="tree/tree.vcxproj" Id="c60215da-1c80-4984-9ef0-002bb85906df" />
 </Solution>
