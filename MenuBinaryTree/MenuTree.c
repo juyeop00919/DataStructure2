@@ -6,17 +6,17 @@ TreeNode* find_node(BTree* tree, const char* path) {
     if (!tree || !tree->root || !path || path[0] != '/') return NULL;
 
     char path_copy[256];
-    strcpy(path_copy, path);
+    strcpy(path_copy, path); //복사
 
-    char* token = strtok(path_copy, "/");
-    if (!token || tree->root->data != token[0]) return NULL; 
+    char* token = strtok(path_copy, "/"); 
+    if (!token || tree->root->data != token[0]) return NULL;  //루트의 이름을 확인하고 없으면 종료
 
     TreeNode* curr = tree->root;
     token = strtok(NULL, "/");
 
     while (token != NULL) {
         char target = token[0];
-        if (curr->left && curr->left->data == target) {
+        if (curr->left && curr->left->data == target) { 
             curr = curr->left;
         }
         else if (curr->right && curr->right->data == target) {
@@ -160,7 +160,7 @@ BTree* insert_root(BTree* tree, char value) {
 }
 
 BTree* insert_child(BTree* tree, const char* parent_path, char child_dir, char value) {
-    TreeNode* parent = find_node(tree, parent_path);
+    TreeNode* parent = find_node(tree, parent_path); 
     TreeNode* new_node = (TreeNode*)malloc(sizeof(TreeNode));
     new_node->data = value;
     new_node->left = NULL;

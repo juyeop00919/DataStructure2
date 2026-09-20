@@ -10,19 +10,19 @@ int main() {
         if (!fgets(line, sizeof(line), stdin)) break;
 
         //개행 문자 제거
-        line[strcspn(line, "\r\n")] = 0;
+        line[strcspn(line, "\r\n")] = 0; //끝에 붙은 엔터키를 NULL로 변경
         if (strlen(line) == 0) continue;
 
         //명령어
-        char* cmd = strtok(line, " \t");
+        char* cmd = strtok(line, " \t"); //빈칸을 기준으로 잘라서 CMD에 저장
         if (!cmd) continue;
 
         if (strcmp(cmd, "EXIT") == 0) { // EXIT 입력시 종료
             break;
         }
         else if (strcmp(cmd, "INSERT") == 0 || strcmp(cmd, "I") == 0) {
-            char* arg1 = strtok(NULL, " \t");
-            char* arg2 = strtok(NULL, " \t");
+            char* arg1 = strtok(NULL, " \t"); //다음 빈칸을 기준으로 잘라서 ARG1에 저장
+            char* arg2 = strtok(NULL, " \t"); 
             char* arg3 = strtok(NULL, " \t");
             char* extra = strtok(NULL, " \t");
 
