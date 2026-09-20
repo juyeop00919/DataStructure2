@@ -89,7 +89,7 @@ void printArrayTree(ArrayTree* tree, int index, int depth, int* sib) {
 
     // 현재 노드 출력
     if (depth == 0) {
-        printf("%c\n", tree->data[index]); 
+        printf("%c\n", tree->data[index]);
     }
     else {
         // 깊이에 따라 수직선(|) 또는 공백 출력
@@ -198,7 +198,7 @@ void printRelationsArray(ArrayTree* tree, char target) {
 }
 //포인터
 TreeNode* createNode(char data) {
-    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode)); 
+    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
