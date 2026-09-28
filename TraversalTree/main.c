@@ -51,6 +51,7 @@ int main() {
 
     // 동적 할당 메모리 해제
     freeTree(root);
+    free(treeString);
 
     return 0;
 }
