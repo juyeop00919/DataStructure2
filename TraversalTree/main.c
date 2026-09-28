@@ -13,7 +13,7 @@ int main() {
     //   / \ /   \ / \
     //  H  I J   K L  M
     // (일부 자식은 생략된 비대칭 구조 포함)
-	char* treeString = (char*)malloc(100 * sizeof(char));
+	char* treeString = (char*)malloc(256 * sizeof(char));
     printf("트리를 입력하세요 : ");
     scanf(" %[^\n]", treeString);
 
