@@ -1,9 +1,9 @@
 # 순차 탐색과 이진 탐색 트리 탐색 성능 비교 분석 보고서
 
 ## 0. 프로그램 실행 결과
-<이미지 1> 
-<이미지 2>
-<이미지 3>
+<img width="1361" height="1023" alt="스크린샷 2026-09-30 185629" src="https://github.com/user-attachments/assets/ea2e856e-a588-4e5f-895e-ffaa5913152b" />
+<img width="1480" height="339" alt="스크린샷 2026-09-30 185739" src="https://github.com/user-attachments/assets/d0448c7e-32e5-4c01-ac43-5c756d55a67a" />
+<img width="1636" height="570" alt="스크린샷 2026-09-30 185800" src="https://github.com/user-attachments/assets/da8d5493-9eb9-4559-b851-06aca00ea9a2" />
 
 ## 1. 실험 결과 요약
 0부터 1,000 사이의 난수 100개를 생성하여 배열과 이진 탐색 트리에 각각 저장한 후, 50개의 무작위 탐색 대상을 찾아보는 실험을 진행한 결과는 다음과 같습니다.
@@ -47,5 +47,5 @@ BST는 탐색이 빠르다는 장점이 있지만, 사전에 데이터를 삽입
 
 결과적으로 이번 실험을 통해 **이진 탐색 트리는 순차 탐색보다 훨씬 빠르지만, 입력되는 데이터의 순서에 따라 트리가 비대칭적으로 자라나면 최적의 성능을 100% 발휘하지 못할 수 있다**는 특성을 알 수 있었습니다.
 
-## Output
-<이미지>
+## 전체 Output
+<img width="2048" height="20184" alt="carbon" src="https://github.com/user-attachments/assets/70a68306-7210-42cf-9fda-3c66ebdcf0d9" />
