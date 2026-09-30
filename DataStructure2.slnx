@@ -5,6 +5,7 @@
   </Configurations>
   <Project Path="BinaryTree/BinaryTree.vcxproj" Id="f5e2e3ac-e658-4a0b-9d88-8dcea99c833c" />
   <Project Path="MenuBinaryTree/MenuBinaryTree.vcxproj" Id="0e2bb074-9696-40a9-b750-4b99a8f03211" />
+  <Project Path="SearchTree/SearchTree.vcxproj" Id="0401fc18-477f-4701-83f5-7ff7a75fbb97" />
   <Project Path="test/test.vcxproj" Id="2cd6c156-06be-496e-8626-3bac57345a08" />
   <Project Path="TraversalTree/TraversalTree.vcxproj" Id="0fe38295-b728-465d-bdfb-cdb6b6a8e18f" />
   <Project Path="tree/tree.vcxproj" Id="c60215da-1c80-4984-9ef0-002bb85906df" />
