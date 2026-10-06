@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="AVLTree/AVLTree.vcxproj" Id="c3fa9eb3-dc35-4bd9-8139-d3f9d8540e8b" />
   <Project Path="BinaryTree/BinaryTree.vcxproj" Id="f5e2e3ac-e658-4a0b-9d88-8dcea99c833c" />
   <Project Path="MenuBinaryTree/MenuBinaryTree.vcxproj" Id="0e2bb074-9696-40a9-b750-4b99a8f03211" />
   <Project Path="SearchTree/SearchTree.vcxproj" Id="0401fc18-477f-4701-83f5-7ff7a75fbb97" />
