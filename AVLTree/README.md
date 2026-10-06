@@ -8,7 +8,9 @@
   - **BST 생성 시 비교 횟수**: 543회
   - **AVL 트리 생성 시 비교 횟수**: 515회
 	
-이미지
+<img width="1073" height="453" alt="image" src="https://github.com/user-attachments/assets/3ba4edd4-c592-48ec-8bf7-cca26bb328e3" />
+
+
 
 ## 2. 자료구조의 구조적 특징
 모든 데이터(92개) 삽입이 완료된 후 각 자료구조의 크기 및 트리의 높이는 다음과 같습니다.
@@ -16,10 +18,12 @@
 - **BST 트리의 높이**: 12
 - **AVL 트리의 높이**: 8
 
-이미지
+<img width="1071" height="108" alt="image" src="https://github.com/user-attachments/assets/8f5087e2-dce1-4f41-9784-36b46052dc7b" />
+
 
 ## 3. 탐색 과정 성능 비교
 임의로 생성된 50개의 탐색 대상(Search Key)에 대해 각 자료구조에서 탐색을 수행한 결과입니다.
+<img width="1078" height="146" alt="image" src="https://github.com/user-attachments/assets/8581eee1-fe09-4863-a5c3-976d7411f6b5" />
 
 | 탐색 기법 | 총 비교 횟수 | 평균 비교 횟수 |
 |---|---|---| 
@@ -27,7 +31,8 @@
 | **BST 탐색** | 377회 | 7.54회 |
 | **AVL 트리 탐색** | 324회 | 6.48회 |
 
-이미지 
+<img width="979" height="270" alt="image" src="https://github.com/user-attachments/assets/0d46d76a-abeb-4dda-9c2a-91fe3a5e835d" />
+
 
 ---
 
@@ -47,14 +52,18 @@
 - **배열 (Array)**
   - 중복을 방지하며 삽입하기 위해 매번 전체 데이터를 확인해야 하므로 생성 시 **4,353회**라는 압도적으로 높은 비교 비용이 발생했습니다 ($O(N^2)$).
   - 탐색 시 평균 85.42회의 비교가 발생한 것은, 난수 탐색 시 배열에 존재하지 않는 값(Search Miss)을 찾기 위해 전체 길이인 92번을 모두 검사한 경우가 많았기 때문입니다. 이는 정렬되지 않은 배열의 치명적인 단점을 보여줍니다.
+    <img width="979" height="254" alt="image" src="https://github.com/user-attachments/assets/bb2cd02b-7b4b-4203-8108-8100d34d9270" />
+
 - **이진 탐색 트리 (BST)**
   - 배열 대비 생성 비교 횟수(543회)와 탐색 비교 횟수(377회)가 획기적으로 줄었습니다. 
   - 하지만 트리의 높이가 12까지 깊어지는 현상에서 볼 수 있듯, 입력 데이터에 따라 성능이 떨어질 수 있는 불안정성을 내포하고 있습니다.
+    <img width="1013" height="281" alt="image" src="https://github.com/user-attachments/assets/3ece988c-5585-4041-b238-89191c46743d" />
+
 - **AVL 트리 (AVL Tree)**
   - 탐색 성능(총 324회, 평균 6.48회)이 세 자료구조 중 가장 뛰어났습니다.
   - 흥미로운 점은 데이터를 삽입하며 구성하는 동안 발생한 노드 비교 횟수 자체도 515회로 일반 BST(543회)보다 오히려 적었다는 것입니다. 이는 트리가 낮은 높이로 유지되면서, 삽입 위치를 찾기 위해 밑으로 내려가며 비교하는 횟수 자체가 줄어들었기 때문입니다.
   - **결론:** AVL 트리는 생성 과정에서 균형 인수를 계산하고 회전시키는 부가적인 오버헤드가 존재하지만, 순수 노드 비교 연산을 줄여주며 특히 **"데이터의 반복적인 탐색"** 환경에서 타 자료구조 대비 압도적으로 빠르고 안정적인 성능 ($O(\log N)$) 을 보장한다는 것을 입증하였습니다.
+    <img width="1069" height="274" alt="image" src="https://github.com/user-attachments/assets/e63b0ee3-e6b9-4a55-a179-b36d16fd6a82" />
 
 ## 전체 코드
-
-이미지
+<img width="2048" height="28346" alt="carbon" src="https://github.com/user-attachments/assets/732789fb-e73c-4f5d-828f-c89a255276ee" />
