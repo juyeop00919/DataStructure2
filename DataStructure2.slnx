@@ -12,4 +12,5 @@
   <Project Path="test/test.vcxproj" Id="2cd6c156-06be-496e-8626-3bac57345a08" />
   <Project Path="TraversalTree/TraversalTree.vcxproj" Id="0fe38295-b728-465d-bdfb-cdb6b6a8e18f" />
   <Project Path="tree/tree.vcxproj" Id="c60215da-1c80-4984-9ef0-002bb85906df" />
+  <Project Path="WUG/WUG.vcxproj" Id="03697b9b-4b0a-4af0-bebe-be1a1b2b89c6" />
 </Solution>
