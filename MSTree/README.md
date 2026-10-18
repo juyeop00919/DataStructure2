@@ -4,6 +4,7 @@
 
 ## 1. 성능 측정 결과 요약
 <img width="584" height="601" alt="스크린샷 2026-10-18 213744" src="https://github.com/user-attachments/assets/853f3aa6-20b1-47f0-b733-07189d382569" />
+
 알고리즘의 실행속도를 비교해보려고 했으나 0.0ms 와 같이 너무 빠르게 실행이 종료되어 반복연산을 사용해 비교했습니다.
 <img width="606" height="602" alt="스크린샷 2026-10-18 214336" src="https://github.com/user-attachments/assets/32ef1dfd-15df-477c-9cd9-b227bc5bf0be" />
 
