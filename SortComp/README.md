@@ -98,4 +98,4 @@
 * 보고서를 작성할 때 실제 실험결과가 이론적인 연산횟수와 일치하는지 확인했고 이를 토대로 작성하였습니다.
 
 ## 7. 출력
-이미지
+<img width="908" height="3502" alt="carbon" src="https://github.com/user-attachments/assets/bbc95d55-3f1b-4ef3-a95e-387a9c21484f" />
