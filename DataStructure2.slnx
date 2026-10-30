@@ -10,6 +10,7 @@
   <Project Path="MSTree/MSTree.vcxproj" Id="1fa08e36-0121-4549-af8e-f68ec000903d" />
   <Project Path="SearchTree/SearchTree.vcxproj" Id="0401fc18-477f-4701-83f5-7ff7a75fbb97" />
   <Project Path="SortComp/SortComp.vcxproj" Id="e95afe7a-757f-48b1-9cd0-79635ba412c1" />
+  <Project Path="SortComp2/SortComp2.vcxproj" Id="5f86d06a-82e7-4b77-8ecb-99ca9ceda17e" />
   <Project Path="test/test.vcxproj" Id="2cd6c156-06be-496e-8626-3bac57345a08" />
   <Project Path="TraversalTree/TraversalTree.vcxproj" Id="0fe38295-b728-465d-bdfb-cdb6b6a8e18f" />
   <Project Path="tree/tree.vcxproj" Id="c60215da-1c80-4984-9ef0-002bb85906df" />
