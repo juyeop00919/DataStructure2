@@ -6,6 +6,7 @@
   <Project Path="AdjacencyMatrixList/AdjacencyMatrixList.vcxproj" Id="c7e1ec54-d209-49c2-8b06-c9a662e47cc5" />
   <Project Path="AVLTree/AVLTree.vcxproj" Id="c3fa9eb3-dc35-4bd9-8139-d3f9d8540e8b" />
   <Project Path="BinaryTree/BinaryTree.vcxproj" Id="f5e2e3ac-e658-4a0b-9d88-8dcea99c833c" />
+  <Project Path="HeapComp/HeapComp.vcxproj" Id="9c4f7aa5-9fa7-412e-85a7-1c4a69230668" />
   <Project Path="MenuBinaryTree/MenuBinaryTree.vcxproj" Id="0e2bb074-9696-40a9-b750-4b99a8f03211" />
   <Project Path="MergeSort/MergeSort.vcxproj" Id="3ed2c2fd-294a-40d6-87cb-ea1c87ca156a" />
   <Project Path="MSTree/MSTree.vcxproj" Id="1fa08e36-0121-4549-af8e-f68ec000903d" />
